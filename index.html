@@ -13,10 +13,13 @@
   <!-- link icon -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
     integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
-  <!-- link angular -->
+    <!-- link mess -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- link angular -->
   <script src="controller/GioiThieuController.js"></script>
   <script src="controller/TrangChuController.js"></script>
   <script src="controller/LienHeController.js"></script>
+  <script src="controller/DangKyController.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
 </head>
@@ -27,7 +30,7 @@
     <div ng-include="'./views/Menu.html'"></div>
     <!-- Banner -->
     <div ng-include="'./views/Header.html'"></div>
-    <main class="container">
+    <main class="container"> 
       <div ng-view></div>
     </main>
     <!-- Footer -->

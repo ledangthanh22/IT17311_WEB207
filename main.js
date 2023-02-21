@@ -8,9 +8,9 @@ angular.module('myApp',['ngRoute']).config(function($routeProvider) {
     }).when('/lien-he',{
         templateUrl: 'views/LienHe.html',
         controller: LienHeController
-    }).when('/khoa-hoc',{
-        templateUrl: 'views/KhoaHoc.html',
-        // controller: LienHeController
+    }).when('/dang-ky',{
+        templateUrl: 'views/DangKy.html',
+        controller: DangKyController
     }).otherwise({
         redirectTo: '/'
     })

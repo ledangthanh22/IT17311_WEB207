@@ -1,0 +1,124 @@
+<div class="container contact-form">
+    <div class="contact-image">
+        <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact" />
+    </div>
+    <form method="post">
+        <h3 style="color: red;">THÔNG TIN NHẬP HỌC</h3>
+        <div class="row">
+
+            <div class="col-md-6">
+                <label for="" class="form-label">Họ và tên</label>
+                <input type="text" class="form-control" name="" placeholder="Nhập họ và tên..." ng-model="client.name">
+                <small class="mess" ng-if="checkData.name==true">Hãy nhập họ và tên!</small>
+            </div>
+            <div class="col-md-6">
+                <label for="" class="form-label">Số căn cước công dân</label>
+                <input type="text" class="form-control" name="" placeholder="Nhập cccd..." ng-model="client.cccd">
+                <small class="mess" ng-if="checkData.cccd==true">Hãy nhập căn cước công dân!</small>
+                <small class="mess" ng-if="checkData.cccdCheck==true">Căn cước công dân phải là số!</small>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-md-6">
+                <label for="" class="form-label">Giới tính</label>
+                <select class="form-select" id="gender">
+                    <option value="Nam">Nam</option>
+                    <option value="Nữ">Nữ</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="" class="form-label">Ngày sinh</label>
+                <input type="date" class="form-control" name=""  ng-model="client.birth">
+                <small class="mess" ng-if="checkData.birth==true">Hãy nhập ngày sinh!</small>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <label for="" class="form-label">Số điện thoại</label>
+                <input type="text" class="form-control" name="" placeholder="Nhập số điện thoại..."
+                    ng-model="client.phoneNumber">
+                <small class="mess" ng-if="checkData.phoneNumber==true">Hãy nhập số điện thoại!</small>
+                <small class="mess" ng-if="checkData.phoneNumberCheck==true">Số điện thoại không đúng định dạng!</small>
+
+            </div>
+            <div class="col-md-6">
+                <label for="" class="form-label">Email</label>
+                <input type="text" class="form-control" name="" placeholder="Nhập email..." ng-model="client.email">
+                <small class="mess" ng-if="checkData.email==true">Hãy nhập email!</small>
+                <small class="mess" ng-if="checkData.emailCheck==true">Email không đúng định dạng!</small>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <label for="" class="form-label">Địa chỉ</label>
+                <input type="text" class="form-control" name="" placeholder="Nhập địa chỉ..." ng-model="client.address">
+                <small class="mess" ng-if="checkData.address==true">Hãy nhập địa chỉ!</small>
+            </div>
+            <div class="col-md-6">
+                <label for="" class="form-label">Khóa học</label>
+                <select class="form-select" id="course" >
+                    <option value="HTML CSS Pro">HTML CSS Pro</option>
+                    <option value="Kiến Thức Nhập Môn IT">Kiến Thức Nhập Môn IT</option>
+                    <option value="HTML CSS từ Zero đến Hero">HTML CSS từ Zero đến Hero</option>
+                    <option value="Responsive Với Grid System">Responsive Với Grid System</option>
+                    <option value="Lập Trình JavaScript Cơ Bản">Lập Trình JavaScript Cơ Bản</option>
+                    <option value="Lập Trình JavaScript Nâng Cao">Lập Trình JavaScript Nâng Cao</option>
+                </select>
+                <small class="mess" ng-if="checkData.course==true">Hãy chọn khóa học</small>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <button ng-click="onSubmit()"
+                     type="button"
+                    class="btnContact">Đăng ký</button>
+            </div>
+        </div>
+        <!-- <h5 style="margin-top: 20px; text-align: center;">Đơn hàng của bạn</h5> -->
+        
+
+    </form>
+    <div class="row">
+        <div class="col-md-12">
+            <table style="font-size: 13px;" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Họ và tên</th>
+                        <th scope="col">Số CCCD</th>
+                        <th scope="col">Giới tính</th>
+                        <th scope="col">Ngày sinh</th>
+                        <th scope="col">Số điện thoại</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Địa chỉ</th>
+                        <th scope="col">Khóa học</th>
+                        <th scope="col">Sửa</th>
+                        <th scope="col">Xóa</th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in listClient">
+                        <td>{{item.name}}</td>
+                        <td>{{item.cccd}}</td>
+                        <td>{{item.gender}}</td>
+                        <td>{{item.birth| date:'dd/MM/yyyy'}}</td>
+                        <td>{{item.phoneNumber}}</td>
+                        <td>{{item.email}}</td>
+                        <td>{{item.address}}</td>
+                        <td>{{item.course}}</td>
+                        <td style="text-align: center;"><a href="" ng-click="onEdit(item.id)"><i style="color: #000;" class="far fa-edit"></i></a></td>
+                        <td style="text-align: center;"><a href="" ng-click="onDelete(item.id)"><i style="color: #000;" class="fas fa-trash-alt"></i></a></td> 
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</div>
